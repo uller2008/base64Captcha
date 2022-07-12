@@ -354,7 +354,7 @@ func (captcha *CaptchaImageChar) drawTextWithFontFamily(text string, isSimpleFon
 		useFont := captcha.getTextFont(isSimpleFont, fontToSelection)
 		c.SetFont(useFont)
 
-		x := int(fontWidth)*i + int(fontWidth)/int(fontSize)
+		x := int(fontWidth)*i + int(fontWidth)/int(fontSize) + 10
 		y := 5 + rand.Intn(captcha.ImageHeight/2) + int(fontSize/2)
 		pt := freetype.Pt(x, y)
 		if _, err := c.DrawString(string(s), pt); err != nil {
